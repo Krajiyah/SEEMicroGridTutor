@@ -1,26 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Bootstrap Example</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="assets/style.css">
-  </head>
-  <body ng-app="app" ng-controller="MainCtrl">
-    <div ng-view></div>
-    <!-- Import Angular -->
-    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-route.min.js"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-animate.min.js"></script>
-    <!-- Angular Controllers -->
-    <script src="app/controllers/main.js"></script>
-    <script src="app/controllers.js"></script>
-    <!-- Angular Services -->
-    <script src="app/services.js"></script>
-    <!-- Angular Project Config -->
-    <script src="app/app.js"></script>
-  </body>
+    <head>
+        <title>Bootstrap Example</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="assets/style.css">
+    </head>
+    <body ng-app="app" ng-controller="MainCtrl">
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">SEE Microgrid Tutor</a>
+                </div>
+                <div class="collapse navbar-collapse" id="myNavbar">
+                    <ul class="nav navbar-nav">
+                        <li ng-class="{'active': getRoute() == '/about'}"><a href="#about">About</a></li>
+                        <li ng-class="{'active': getRoute() == '/game'}"><a href="#game">Game</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div ng-view></div>
+        <!-- Import Angular -->
+        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-route.min.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-animate.min.js"></script>
+        <script src="/assets/js/angular-dragdrop.min.js"></script>
+        <!-- Angular Controllers -->
+        <script src="app/controllers/main.js"></script>
+        <script src="app/controllers.js"></script>
+        <!-- Angular Services -->
+        <script src="app/services/tools.js"></script>
+        <script src="app/services.js"></script>
+        <!-- Angular Project Config -->
+        <script src="app/app.js"></script>
+    </body>
 </html>

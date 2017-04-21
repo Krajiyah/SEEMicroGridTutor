@@ -1,17 +1,27 @@
 /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
 .row.content {
-  height: 550px
+	height: 550px
 }
 
 /* Set gray background color and 100% height */
 .sidenav {
-  background-color: #f1f1f1;
-  height: 100%;
+	background-color: #f1f1f1;
+	height: 100%;
 }
 
-/* On small screens, set height to 'auto' for the grid */
-@media screen and (max-width:767px) {
-  .row.content {
-    height: auto;
-  }
+.navbar {
+	margin-bottom: 0;
+	border-radius: 0;
+}
+
+.tool-label {
+	margin-right: 10px !important;
+}
+
+.tool-image {
+	height: 50px !important;
+}
+
+.game-button {
+	margin-left: 5px !important;
 }
