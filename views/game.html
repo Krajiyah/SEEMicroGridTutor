@@ -13,62 +13,51 @@
     </div>
     <div class="col-sm-8">
       <div class="well">
-        <h4>Dashboard</h4>
-        <p>Some text..</p>
-      </div>
-      <div class="row">
-        <div class="col-sm-3">
-          <div class="well">
-            <h4>Users</h4>
-            <p>1 Million</p>
-          </div>
-        </div>
-        <div class="col-sm-3">
-          <div class="well">
-            <h4>Pages</h4>
-            <p>100 Million</p>
-          </div>
-        </div>
-        <div class="col-sm-3">
-          <div class="well">
-            <h4>Sessions</h4>
-            <p>10 Million</p>
-          </div>
-        </div>
-        <div class="col-sm-3">
-          <div class="well">
-            <h4>Bounce</h4>
-            <p>30%</p>
-          </div>
-        </div>
+        <h4>Game</h4>
+        <p>Drag tools into the drop zones. Try and figure out which combinations yield the best results. What are the best results? Try to minimize the cost and risk, while maximizing the power.</p>
       </div>
       <div class="row">
         <div class="col-sm-4">
-          <div class="well">
-            <p>Text</p>
-            <p>Text</p>
-            <p>Text</p>
+          <div class="well green-bg">
+            <div class="row">
+              <div class="col-sm-3">
+                <i class="fa fa-5x fa-usd" aria-hidden="true"></i>
+              </div>
+              <div class="col-sm-9">
+                <p class="box-value">{{cost}}</p>
+              </div>
+            </div>
           </div>
         </div>
         <div class="col-sm-4">
-          <div class="well">
-            <p>Text</p>
-            <p>Text</p>
-            <p>Text</p>
+          <div class="well yellow-bg">
+            <div class="row">
+              <div class="col-sm-3">
+                <i class="fa fa-5x fa-bolt" aria-hidden="true"></i>
+              </div>
+              <div class="col-sm-9">
+                <p class="box-value">{{power + 'kWh'}}</p>
+              </div>
+            </div>
           </div>
         </div>
         <div class="col-sm-4">
-          <div class="well">
-            <p>Text</p>
-            <p>Text</p>
-            <p>Text</p>
+          <div class="well red-bg">
+            <div class="row">
+              <div class="col-sm-3">
+                <i class="fa fa-5x fa-exclamation-circle" aria-hidden="true"></i>
+              </div>
+              <div class="col-sm-9">
+                <p class="box-value-extra-margin">{{'Risk: ' + risk}}</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
       <div class="row">
         <div class="col-sm-8">
           <div class="well">
-            <p>Text</p>
+            <p>THIS IS WHERE YOU DROP TOOLS</p>
           </div>
         </div>
         <div class="col-sm-4">
@@ -78,10 +67,11 @@
       </div>
     </div>
     <div class="col-sm-2 sidenav hidden-xs">
-      <h2></h2>
+      <h2>Results</h2>
       <ul class="nav nav-pills nav-stacked">
-        <li>Result1</li>
-        <li>Result2</li>
+        <li ng-repeat="result in results">
+          {{result}}
+        </li>
       </ul><br>
     </div>
   </div>

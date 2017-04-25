@@ -25,3 +25,28 @@
 .game-button {
 	margin-left: 5px !important;
 }
+
+.yellow-bg {
+	background-color: #f0ad4e;
+    border-color: #eea236
+}
+
+.green-bg {
+	background-color: #5cb85c;
+    border-color: #4cae4c;
+}
+
+.red-bg {
+	background-color: #d9534f;
+    border-color: #d43f3a;
+}
+
+.box-value, .box-value-extra-margin {
+	font-size: 1.5em!important;
+	margin-top: 15px !important;
+	margin-left: 5px !important;
+}
+
+.box-value-extra-margin {
+	margin-left: 30px !important;
+}
