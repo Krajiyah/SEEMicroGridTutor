@@ -9,6 +9,9 @@ angular.module('app', [
             templateUrl: "views/about.html"
         })
         .when("/game", {
+            templateUrl: "views/locations.html"
+        })
+        .when("/actualgame", {
             templateUrl: "views/game.html"
         })
         .otherwise({

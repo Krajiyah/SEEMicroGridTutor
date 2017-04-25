@@ -1,0 +1,15 @@
+<div class="container-fluid">
+  <div class="row content">
+    <br>
+    <div>
+      <h2>Choose a location:</h2>
+      <select ng-model="loc" ng-options="loc.name for loc in locations" >
+        <option value="loc">loc.name</option>
+      </select>
+
+      <button ng-click="go('/actualgame', loc)">Go to Game</button>
+      <br>
+    </div>
+    
+  </div>
+</div>
