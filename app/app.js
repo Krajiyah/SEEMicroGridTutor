@@ -8,10 +8,10 @@ angular.module('app', [
         .when("/about", {
             templateUrl: "views/about.html"
         })
-        .when("/game", {
+        .when("/location", {
             templateUrl: "views/locations.html"
         })
-        .when("/actualgame", {
+        .when("/game", {
             templateUrl: "views/game.html"
         })
         .otherwise({

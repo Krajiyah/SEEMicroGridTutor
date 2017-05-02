@@ -50,3 +50,10 @@
 .box-value-extra-margin {
 	margin-left: 30px !important;
 }
+
+.location-picker-container {
+	margin-top: 15% !important;
+	margin-left: auto !important;
+	margin-right: auto !important;
+	width: 25% !important;
+}

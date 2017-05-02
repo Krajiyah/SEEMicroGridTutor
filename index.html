@@ -24,7 +24,8 @@
                 <div class="collapse navbar-collapse" id="myNavbar">
                     <ul class="nav navbar-nav">
                         <li ng-class="{'active': getRoute() == '/about'}"><a href="#about">About</a></li>
-                        <li ng-class="{'active': getRoute() == '/game'}"><a href="#game">Game</a></li>
+                        <li ng-if="loc == null" ng-class="{'active': getRoute() == '/location'}"><a href="#location">Game</a></li>
+                        <li ng-if="loc != null" ng-class="{'active': getRoute() == '/game'}"><a href="#game">Game</a></li>
                     </ul>
                 </div>
             </div>

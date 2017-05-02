@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<div class="container-fluid" ng-init="goIfLocationNull('/location')">
   <div class="row content">
     <br>
     <div class="col-sm-2 sidenav hidden-xs">
@@ -14,7 +14,7 @@
     <div class="col-sm-8">
       <div class="well">
         <h4>Game</h4>
-        <p>Drag tools into the drop zones. Try and figure out which combinations yield the best results. What are the best results? Try to minimize the cost and risk, while maximizing the power. You are currently in {{loc.name}}</p>
+        <p>Drag tools into the drop zones. Try and figure out which combinations yield the best results. What are the best results? Try to minimize the cost and risk, while maximizing the power. You are currently in {{getLocationByID(locID).name}}</p>
       </div>
       <div class="row">
         <div class="col-sm-4">

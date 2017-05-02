@@ -1,15 +1,13 @@
 <div class="container-fluid">
   <div class="row content">
     <br>
-    <div>
+    <div class="well location-picker-container" ng-init="locID = 0">
       <h2>Choose a location:</h2>
-      <select ng-model="loc" ng-options="loc.name for loc in locations" >
-        <option value="loc">loc.name</option>
+      <select class="form-control location-picker" ng-model="locID" ng-options="loc.id as loc.name for loc in locations">
       </select>
-
-      <button ng-click="go('/actualgame', loc)">Go to Game</button>
+      <br />
+      <button ng-click="go('/game', locID)" type="button" class="game-button btn btn-primary btn-lg">Continue</button>
       <br>
     </div>
-    
   </div>
 </div>
