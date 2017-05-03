@@ -8,12 +8,15 @@ angular.module('app.services.tools', []).factory("Tools", function() {
 
 	function getTools() {
 		return [{
+			id: 1,
 			name: "solar panel",
 			image: '/assets/images/solarpanel.png'
 		}, {
+			id: 2,
 			name: "hydro plant",
 			image: '/assets/images/hydro.png'
 		}, {
+			id: 3,
 			name: "wind turbine",
 			image: '/assets/images/windturbine.png'
 		}];
@@ -84,10 +87,22 @@ angular.module('app.services.tools', []).factory("Tools", function() {
 		return tools;
 	}
 
+	function getToolByID(ID) {
+		var tool = null;
+		getTools().forEach(function(t) {
+			if (t.id == ID) {
+				tool = t;
+				return true;
+			}
+		});
+		return tool;
+	}
+
 	return {
 		getTools: getTools,
 		toolListEquals: toolListEquals,
 		dummyTool: dummyTool,
-		filterDummyTool: filterDummyTool
+		filterDummyTool: filterDummyTool,
+		getToolByID: getToolByID
 	}
 });
