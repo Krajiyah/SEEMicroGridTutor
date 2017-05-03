@@ -7,10 +7,9 @@ angular.module('app.controllers.main', []).controller("MainCtrl", function($scop
     $scope.locations = Locations.getLocations();
     $scope.tools = Tools.getTools();
     $scope.droppedTools = [];
-    $scope.power = 300;
-    $scope.cost = 1000;
-    $scope.risk = "HIGH";
-    const resultsHelpMessage = "Please drop a tool into the drop zones to see what results you get.";
+    $scope.power = 0;
+    $scope.cost = 0;
+    $scope.risk = "";
     $scope.results = [];
 
     $scope.go = function(path, locID) {
@@ -26,11 +25,11 @@ angular.module('app.controllers.main', []).controller("MainCtrl", function($scop
 
     $scope.$watch("droppedTools", function(droppedTools) {
         if (droppedTools == null || droppedTools.length == 0) $scope.droppedTools = [Tools.dummyTool()];
-        else if (Tools.toolListEquals(droppedTools,  [Tools.dummyTool()])) $scope.results = [resultsHelpMessage];
-        else {
-            $scope.droppedTools = Tools.filterDummyTool(droppedTools);
-            $scope.results = Results.getResults($scope.droppedTools, $scope.locID);
-        }
+        else if (!Tools.toolListEquals(droppedTools,  [Tools.dummyTool()])) $scope.droppedTools = Tools.filterDummyTool(droppedTools);
+        $scope.results = Results.getResults($scope.droppedTools, $scope.locID);
+        $scope.risk = Results.getRisk($scope.droppedTools, $scope.locID);
+        $scope.power = Results.getPower($scope.droppedTools, $scope.locID);
+        $scope.cost = Results.getCost($scope.droppedTools, $scope.locID);
     }, true);
 
     $scope.$watch("tools", function(tools) {

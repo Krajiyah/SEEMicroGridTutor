@@ -79,10 +79,7 @@ angular.module('app.services.tools', []).factory("Tools", function() {
 					break;
 				}
 			}
-			console.log("---------");
-			console.log(JSON.stringify(tools));
 			tools.splice(index, 1);
-			console.log(JSON.stringify(tools));
 		}
 		return tools;
 	}
