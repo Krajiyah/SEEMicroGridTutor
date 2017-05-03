@@ -1,6 +1,7 @@
 angular.module('app', [
     'ngRoute',
     'ngAnimate',
+    'dndLists',
     'app.services',
     'app.controllers'
 ]).config(function($routeProvider) {

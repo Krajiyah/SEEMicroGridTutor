@@ -10,6 +10,21 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
         <link rel="stylesheet" href="assets/style.css">
+        <!-- Import Angular -->
+        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-route.min.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-animate.min.js"></script>
+        <script src="//marceljuenemann.github.io/angular-drag-and-drop-lists/angular-drag-and-drop-lists.js"></script>
+        <!-- Angular Controllers -->
+        <script src="app/controllers/main.js"></script>
+        <script src="app/controllers.js"></script>
+        <!-- Angular Services -->
+        <script src="app/services/results.js"></script>
+        <script src="app/services/tools.js"></script>
+        <script src="app/services/locations.js"></script>
+        <script src="app/services.js"></script>
+        <!-- Angular Project Config -->
+        <script src="app/app.js"></script>
     </head>
     <body ng-app="app" ng-controller="MainCtrl">
         <nav class="navbar navbar-inverse">
@@ -32,19 +47,5 @@
             </div>
         </nav>
         <div ng-view></div>
-        <!-- Import Angular -->
-        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
-        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-route.min.js"></script>
-        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-animate.min.js"></script>
-        <script src="/assets/js/angular-dragdrop.min.js"></script>
-        <!-- Angular Controllers -->
-        <script src="app/controllers/main.js"></script>
-        <script src="app/controllers.js"></script>
-        <!-- Angular Services -->
-        <script src="app/services/tools.js"></script>
-        <script src="app/services/locations.js"></script>
-        <script src="app/services.js"></script>
-        <!-- Angular Project Config -->
-        <script src="app/app.js"></script>
     </body>
 </html>
