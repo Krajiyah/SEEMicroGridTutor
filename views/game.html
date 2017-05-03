@@ -6,7 +6,7 @@
       <ul dnd-list="tools">
         <li ng-repeat="tool in tools"
           dnd-draggable="tool"
-          dnd-moved="tools.splice($index, 1)"
+          dnd-moved="tools"
           dnd-effect-allowed="move"
           >
           {{tool.name}}

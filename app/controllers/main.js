@@ -6,14 +6,12 @@ angular.module('app.controllers.main', []).controller("MainCtrl", function($scop
     }
     $scope.locations = Locations.getLocations();
     $scope.tools = Tools.getTools();
-    const startingDroppedTools = [{name: "dummy", id: 123}];
-    $scope.droppedTools = startingDroppedTools.slice(); // TODO: for some reason bug when droppedTools starts empty
+    $scope.droppedTools = [];
     $scope.power = 300;
     $scope.cost = 1000;
     $scope.risk = "HIGH";
     const resultsHelpMessage = "Please drop a tool into the drop zones to see what results you get.";
-
-    $scope.results = [resultsHelpMessage];
+    $scope.results = [];
 
     $scope.go = function(path, locID) {
         $location.path(path);
@@ -27,13 +25,16 @@ angular.module('app.controllers.main', []).controller("MainCtrl", function($scop
     $scope.getLocationByID = Locations.getLocationByID;
 
     $scope.$watch("droppedTools", function(droppedTools) {
-        console.log(JSON.stringify(droppedTools));
-        if (droppedTools.length == 0 || Tools.toolListEquals(droppedTools,  startingDroppedTools)) {
-            console.log("test1");
-            $scope.results = [resultsHelpMessage];
-        } else if (droppedTools != null && droppedTools.length > 0) {
-            console.log("test2");
-            $scope.results = Results.getResults(droppedTools, $scope.locID);
+        if (droppedTools == null || droppedTools.length == 0) $scope.droppedTools = [Tools.dummyTool()];
+        else if (Tools.toolListEquals(droppedTools,  [Tools.dummyTool()])) $scope.results = [resultsHelpMessage];
+        else {
+            $scope.droppedTools = Tools.filterDummyTool(droppedTools);
+            $scope.results = Results.getResults($scope.droppedTools, $scope.locID);
         }
+    }, true);
+
+    $scope.$watch("tools", function(tools) {
+        var startingTools = Tools.getTools();
+        if (!Tools.toolListEquals(tools,  startingTools)) $scope.tools = startingTools;
     }, true);
 });

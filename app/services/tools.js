@@ -1,4 +1,11 @@
 angular.module('app.services.tools', []).factory("Tools", function() {
+	function dummyTool() {
+		return {
+			name: "Drop Tools Here",
+			image: '/assets/images/favicon.png'
+		}
+	}
+
 	function getTools() {
 		return [{
 			name: "solar panel",
@@ -21,6 +28,7 @@ angular.module('app.services.tools', []).factory("Tools", function() {
 		if (tools1 == null && tools2.length == 0) return true;
 		if (tools2 == null && tools1.length == 0) return true;
 		if (tools1.length == 0 && tools2.length == 0) return true;
+		if (tools1.length != tools2.length) return false;
 		for (var i = 0; i < tools1.length; i++) {
 			var tool1 = tools1[i];
 			var tool1Exists = false;
@@ -48,8 +56,41 @@ angular.module('app.services.tools', []).factory("Tools", function() {
 		return true;
 	}
 
+	function _containsDummyTool(tools) {
+		if (tools == null || tools.length == 0) return false;
+		for (var i = 0; i < tools.length; i++) {
+			var tool = tools[i];
+			if (_toolEquals(tool, dummyTool())) {
+				return true;
+			}
+		}
+		return false;
+	}
+
+	function filterDummyTool(tools) {
+		if (tools == null || tools.length == 0) return [];
+		if (!_containsDummyTool(tools)) return tools;
+		while (_containsDummyTool(tools)) {
+			var index = null;
+			for (var i = 0; i < tools.length; i++) {
+				var tool = tools[i];
+				if (_toolEquals(tool, dummyTool())) {
+					index = i;
+					break;
+				}
+			}
+			console.log("---------");
+			console.log(JSON.stringify(tools));
+			tools.splice(index, 1);
+			console.log(JSON.stringify(tools));
+		}
+		return tools;
+	}
+
 	return {
 		getTools: getTools,
-		toolListEquals: toolListEquals
+		toolListEquals: toolListEquals,
+		dummyTool: dummyTool,
+		filterDummyTool: filterDummyTool
 	}
 });
