@@ -1,0 +1,13 @@
+{
+  "name": "seemicrogridtutor",
+  "version": "1.0.0",
+  "description": "Web App for SEE Microgrid Tutor",
+  "main": "server.js",
+  "dependencies": {
+    "cors": "*",
+    "body-parser": "*",
+    "ejs": "^1.0.0",
+    "express": "^4.6.1",
+    "express-ejs-layouts": "^1.1.0"
+  }
+}
