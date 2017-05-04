@@ -62,3 +62,16 @@
 	width: 100% !important;
 	height: 100% !important;
 }
+
+.pdf-container {
+	margin-top: 30px !important;
+    display: block !important;
+}
+
+.results-column {
+	overflow-y: scroll !important;
+}
+
+.results > li {
+	margin-bottom: 10px !important;
+}

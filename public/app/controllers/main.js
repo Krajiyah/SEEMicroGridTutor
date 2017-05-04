@@ -1,9 +1,11 @@
 angular.module('app.controllers.main', []).controller("MainCtrl", function($scope, $location, Tools, Locations, Results) {
+
     $scope.getRoute = function() {
         var path = $location.path();
         if (path == null || path.trim() == "") return "/about";
         return path;
     }
+    
     $scope.locations = Locations.getLocations();
     $scope.tools = Tools.getTools();
     $scope.droppedTools = [];
@@ -25,7 +27,7 @@ angular.module('app.controllers.main', []).controller("MainCtrl", function($scop
 
     $scope.$watch("droppedTools", function(droppedTools) {
         if (droppedTools == null || droppedTools.length == 0) $scope.droppedTools = [Tools.dummyTool()];
-        else if (!Tools.toolListEquals(droppedTools,  [Tools.dummyTool()])) $scope.droppedTools = Tools.filterDummyTool(droppedTools);
+        else if (!Tools.toolListEquals(droppedTools, [Tools.dummyTool()])) $scope.droppedTools = Tools.filterDummyTool(droppedTools);
         $scope.results = Results.getResults($scope.droppedTools, $scope.locID);
         $scope.risk = Results.getRisk($scope.droppedTools, $scope.locID);
         $scope.power = Results.getPower($scope.droppedTools, $scope.locID);
@@ -34,6 +36,6 @@ angular.module('app.controllers.main', []).controller("MainCtrl", function($scop
 
     $scope.$watch("tools", function(tools) {
         var startingTools = Tools.getTools();
-        if (!Tools.toolListEquals(tools,  startingTools)) $scope.tools = startingTools;
+        if (!Tools.toolListEquals(tools, startingTools)) $scope.tools = startingTools;
     }, true);
 });
